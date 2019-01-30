@@ -19,10 +19,11 @@ class Minutes(models.Model):
     minutestitle=models.CharField(max_length=255)
     meeting=models.ForeignKey(Meeting, on_delete=models.DO_NOTHING)
     meetingattendance=models.ManyToManyField(User)
-    minutestext=models.CharField(max_length=255)
+    minutestext=models.CharField(max_length=500)
+    minutesdate=models.DateField()
 
     def __str__(self):
-        return self.minutestitle
+        return self.minutesdate
 
     class Meta:
         db_table='minutes'
@@ -37,7 +38,7 @@ class Resource(models.Model):
     resourcedescription=models.CharField(max_length=255)
 
     def __str__(self):
-        return self.recourcename
+        return self.resourcename
 
     class Meta:
         db_table='resource'
