@@ -16,7 +16,7 @@ class Meeting(models.Model):
         db_table='meeting'
 
 class Minutes(models.Model):
-    minutestitle=models.CharField(max_length=255)
+    minutesstitle=models.CharField(max_length=255)
     meeting=models.ForeignKey(Meeting, on_delete=models.DO_NOTHING)
     meetingattendance=models.ManyToManyField(User)
     minutestext=models.CharField(max_length=500)

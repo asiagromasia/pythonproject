@@ -13,9 +13,9 @@
         <th>Agenda</th>
 
     </tr>
-    {% for item in minutes_list %}
+    {% for item in meeting_list %}
         <tr>
-            <td><a href="{% url 'meetings' id=item.id %}">{{ item.meetingtitle }}</a></td>
+            <td><a href="{% url 'minutes' id=item.id %}">{{ item.meetingtitle }}</a></td>
             <td>{{ item.meetingdate }}</td>
             <td>{{ item.meetingtime }}</td>
             <td>{{ item.meetinglocation }}</td>

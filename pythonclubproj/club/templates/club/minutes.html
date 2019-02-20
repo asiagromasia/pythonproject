@@ -1,9 +1,7 @@
 {% extends 'base.html' %}
 {% block content%} ,
-<h2>{{ minutes.meetingtitle }}</h2>
-<p>{{ minutes.meetingdate }}</p>
-<p>{{ minutes.meetingtime }}</p>
-<p>{{ minutes.meetinglocation }}</p>
-<p>{{ minutes.meetingagenda }}</p>
+<h2>{{ minutes_list.minutestitle }}</h2>
+<p>{{ minutes_list.minutesdate }}</p>
+<p>{{ minutes_list.minutestext }}</p>
 
 {% endblock%}

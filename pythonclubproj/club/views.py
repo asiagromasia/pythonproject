@@ -12,11 +12,11 @@ def resources (request):
     return render (request, 'club/resources.html',{'resource_list': resource_list})
 
 def meetings (request):
-    meeting_list=Meeting.object.all()
-    return render (request, 'club/meetings.html', {'meeting_list': meeting_list})
+    meeting_list=Meeting.objects.all()
+    return render (request, 'club/meetings.html',{'meeting_list': meeting_list})
 
 def minutes (request, id):
-    minutes=get_object_or_404(Meeting, pk=id)
+    minutes_list=get_object_or_404(Meeting, pk=id)
     # minutes_list=Meeting.objects.all()
-    return render (request, 'club/minutes.html', {'minutes_list':minutes})    
+    return render (request, 'club/minutes.html',{'minutes_list': minutes_list})    
 
