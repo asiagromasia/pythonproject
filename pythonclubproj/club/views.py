@@ -15,8 +15,8 @@ def meetings (request):
     meeting_list=Meeting.objects.all()
     return render (request, 'club/meetings.html',{'meeting_list': meeting_list})
 
-def minutes (request, id):
-    minutes_list=get_object_or_404(Meeting, pk=id)
+def meetingdetail(request, id):
+    detail=get_object_or_404(Meeting, pk=id)
     # minutes_list=Meeting.objects.all()
-    return render (request, 'club/minutes.html',{'minutes_list': minutes_list})    
+    return render (request, 'club/details.html',{'detail': detail})    
 

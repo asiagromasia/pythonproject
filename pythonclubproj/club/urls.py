@@ -8,7 +8,7 @@ urlpatterns=[
     # index is different than the rest so now you have to do the name of the view
     path('resources/', views.resources, name='resources'),
     path('meetings', views.meetings, name='meetings' ),
-    path('minutes/<int:id>', views.minutes, name='minutes'),
+    path('meetingdetail/<int:id>', views.meetingdetail, name='meetingdetail'),
 ]
 
 # urlpatterns=[
