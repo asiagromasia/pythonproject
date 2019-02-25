@@ -9,7 +9,10 @@ urlpatterns=[
     path('resources/', views.resources, name='resources'),
     path('meetings', views.meetings, name='meetings' ),
     path('meetingdetail/<int:id>', views.meetingdetail, name='meetingdetail'),
-]
+    path('newMeeting/', views.newMeeting, name='newmeeting'),
+    path('loginmessage/', views.loginmessage, name='loginmessage'),
+    path('logoutmessage/', views.logoutmessage, name='logoutmessage'),
+     ]
 
 # urlpatterns=[
 #     path('', views.index, name='index'),
@@ -17,4 +20,5 @@ urlpatterns=[
 #     path('techtypes/', views.techtypes, name='techtypes'),
 #     path('getproducts',views.getproducts, name='getproducts'),
 #     path('productdetail/<int:id>', views.productdetail, name='details'),
+ #    path('newProduct/', views.newProduct, name='newproduct'),
 # ]
