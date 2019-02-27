@@ -7,7 +7,9 @@ class Meeting(models.Model):
     meetingdate=models.DateField()
     meetingtime=models.TimeField()
     meetinglocation=models.CharField(max_length=255)
-    meetingagenda=models.CharField(max_length=255)
+    user=models.ManyToManyField(User)
+    #wrong one- user=models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    meetingagenda=models.TextField()
 
     def __str__(self):
         return self.meetingtitle
@@ -16,14 +18,14 @@ class Meeting(models.Model):
         db_table='meeting'
 
 class Minutes(models.Model):
-    minutesstitle=models.CharField(max_length=255)
+    minutestitle=models.CharField(max_length=255)
     meeting=models.ForeignKey(Meeting, on_delete=models.DO_NOTHING)
     meetingattendance=models.ManyToManyField(User)
     minutestext=models.CharField(max_length=500)
     minutesdate=models.DateField()
 
     def __str__(self):
-        return self.minutesdate
+        return str(self.meeting)
 
     class Meta:
         db_table='minutes'
@@ -35,7 +37,7 @@ class Resource(models.Model):
     resourcedate=models.DateField()
     resourcedateentered=models.DateField()
     user=models.ForeignKey(User, on_delete=models.DO_NOTHING)
-    resourcedescription=models.CharField(max_length=255)
+    resourcedescription=models.TextField()
 
     def __str__(self):
         return self.resourcename

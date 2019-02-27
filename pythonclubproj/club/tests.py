@@ -10,7 +10,7 @@ from django.urls import reverse
     # def test_tablename(self):
     #     self.assertEqual(str(Resource._meta.db_table), 'resource')
 
-class TestIndex(TestCase):
+class IndexTest(TestCase):
     def test_view_url_accessible_by_name(self):
         response=self.client.get(reverse('index'))
         self.assertEqual(response.status_code, 200)
@@ -18,4 +18,3 @@ class TestIndex(TestCase):
     def test_view_uses_correct_template(self):
         response=self.client.get(reverse('index'))
         self.assertTemplateUsed(response, 'club/index.html')     
-        

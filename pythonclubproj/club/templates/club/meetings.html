@@ -5,21 +5,25 @@
 <h2>Meetings</h2>
 <table class='table'>
     <tr>
-        <th>Meetings</th>
         <th>Title</th>
         <th>Date</th>
         <th>Time</th>
         <th>Location</th>
+        <th>Users</th> 
         <th>Agenda</th>
+        
 
     </tr>
     {% for item in meeting_list %}
         <tr>
-            <td><a href="{% url 'meetingdetail' id=item.id %}">{{ item.meetingtitle }}</a></td>
+            <!--<td>{{ item.meetingtitle }}</td> -->
+            <td><a href="{% url 'details' id=item.id %}">{{ item.meetingtitle }}</a></td>
             <td>{{ item.meetingdate }}</td>
             <td>{{ item.meetingtime }}</td>
             <td>{{ item.meetinglocation }}</td>
+            <td>{{ item.user }}</td>
             <td>{{ item.meetingagenda }}</td>
+            
         </tr>
         
     {% endfor %}
