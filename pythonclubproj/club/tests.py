@@ -3,12 +3,12 @@ from .models import Resource, Meeting, Minutes
 from django.urls import reverse
 
 # Create your tests here.
-#class ResourceTest(TestCase):
-    # def test_stringOutput(self):
-    #     resource=Resource(resourcename='laptop')
-    #     self.assertEqual(str(resource), resource.resourcename)
-    # def test_tablename(self):
-    #     self.assertEqual(str(Resource._meta.db_table), 'resource')
+class ResourceTest(TestCase):
+    def test_stringOutput(self):
+       resource=Resource(resourcename='laptop')
+       self.assertEqual(str(resource), resource.resourcename)
+    def test_tablename(self):
+        self.assertEqual(str(Resource._meta.db_table), 'resource')
 
 class IndexTest(TestCase):
     def test_view_url_accessible_by_name(self):
